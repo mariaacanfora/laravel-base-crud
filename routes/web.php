@@ -17,5 +17,6 @@ use Illuminate\Support\Facades\Route;
     return view('home.index');
 });
  */
+Route::get('/', 'HomeController@index');
 
-Route::resource("/", "NovelController");
+Route::resource("novels", "NovelController");

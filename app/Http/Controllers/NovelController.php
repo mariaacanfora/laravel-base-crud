@@ -16,7 +16,7 @@ class NovelController extends Controller
     {
         $novels = Novel::all();
 
-        return view("home.index", compact("novels"));
+        return view("novels.index", compact("novels"));
     }
 
     /**
@@ -26,7 +26,7 @@ class NovelController extends Controller
      */
     public function create()
     {
-        return view("home.create");
+        return view("novels.create");
     }
 
     /**
@@ -38,11 +38,13 @@ class NovelController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $newUser = new Novel();
-        $newUser->fill($data);
-        $newUser->save();
 
-        return redirect()->route("home.index", $newUser->id);
+        $novel = new Novel();
+        $novel->fill($data);
+        $novel->save();
+        
+
+        return redirect()->route("novels.index");
     }
 
     /**
@@ -51,15 +53,15 @@ class NovelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Novel $novel)
     {
-        //
+        return view("novels.show", compact("novel"));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Novel  $novel
      * @return \Illuminate\Http\Response
      */
     public function edit($id)

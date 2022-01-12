@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Novel extends Model
 {
     protected $fillable = [
-        'title', 'description', 'price', 'thumb', 'series', 'saleDate', 'type'
+        'title', 'price', 'thumb', 'series', 'saleDate', 'type', 'description'
     ];
 }
