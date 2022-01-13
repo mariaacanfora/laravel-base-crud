@@ -64,9 +64,9 @@ class NovelController extends Controller
      * @param  \App\Novel  $novel
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Novel $novel)
     {
-        //
+        return view('novels.edit', compact("novel"));
     }
 
     /**
@@ -76,9 +76,13 @@ class NovelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Novel $novel)
     {
-        //
+        $formData = $request->all();
+
+        $novel->update($formData);
+
+        return redirect()->route('novels.show', $novel->id);
     }
 
     /**

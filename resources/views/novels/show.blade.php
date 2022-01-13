@@ -12,5 +12,11 @@
         <li>Description: {{$novel->description}}</li>
         <li>Sale date: {{$novel->saleDate}}</li>
     </ul>
+    
+    <a class="btn btn-success" href="{{route('novels.index', $novel->id)}}">Torna ai fumetti</a>
+
+    <a class="btn btn-primary" href="{{route('novels.edit', $novel->id)}}">Modifica</a>
+
+
 </div>
 @endsection
