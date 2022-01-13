@@ -23,6 +23,12 @@
                 <div class="card-body">
                     <a href="{{route('novels.show', $novel->id)}}" class="card-link">Visualizza di più</a>
                     <a href="{{route('novels.edit', $novel->id)}}" class="card-link">Modifica</a>
+                    
+                    <form action="{{route('novels.edit', $novel->id)}}" method="POST">
+                        @csrf
+                        @method('delete')
+                        <button class="btn" type="submit">Elimina</button>
+                    </form>
                 </div>
             </div>
         @endforeach

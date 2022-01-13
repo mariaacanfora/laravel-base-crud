@@ -88,11 +88,12 @@ class NovelController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Novel  $novel
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Novel $novel)
     {
-        //
+        $novel->delete();
+        return redirect()->route('novels.index')->with('msg', 'Fumetto eliminato correttamente');
     }
 }
