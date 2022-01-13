@@ -8,5 +8,14 @@ main{
             object-fit:cover;
             object-position:top;
         }
+    };
+
+    .no-box-shadows{
+        padding-left: 0;
+        color: red;
+
+        &:focus{
+            box-shadow: 0;
+        }
     }
 }

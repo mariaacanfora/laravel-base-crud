@@ -7,3 +7,12 @@ main .card img {
      object-position: top;
 }
 
+main .no-box-shadows {
+  padding-left: 0;
+  color: red;
+}
+
+main .no-box-shadows:focus {
+  box-shadow: 0;
+}
+

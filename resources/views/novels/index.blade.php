@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('page_title', 'DC Comics - Homepage')
+@section('page_title', 'DC Comics - Novels')
 
 @section('main_content')
 <div class="container" style="height: calc(100vh - 176px)">
@@ -24,10 +24,10 @@
                     <a href="{{route('novels.show', $novel->id)}}" class="card-link">Visualizza di più</a>
                     <a href="{{route('novels.edit', $novel->id)}}" class="card-link">Modifica</a>
                     
-                    <form action="{{route('novels.edit', $novel->id)}}" method="POST">
+                    <form action="{{route('novels.destroy', $novel->id)}}" method="POST">
                         @csrf
                         @method('delete')
-                        <button class="btn" type="submit">Elimina</button>
+                        <button class="btn btn-link no-box-shadows" type="submit">Elimina</button>
                     </form>
                 </div>
             </div>

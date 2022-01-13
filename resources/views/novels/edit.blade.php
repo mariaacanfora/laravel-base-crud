@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('page_title', 'DC Comics - Add novel')
+@section('page_title', 'DC Comics - Edit novel')
 
 @section('main_content')
 <div class="container" style="height: calc(100vh - 176px)">

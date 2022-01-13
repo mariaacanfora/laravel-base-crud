@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('page_title', 'DC Comics - Add novel')
+@section('page_title', "DC Comics - Novel's details")
 
 @section('main_content')
 <div class="container" style="height: calc(100vh - 176px)">
@@ -16,6 +16,12 @@
     <a class="btn btn-success" href="{{route('novels.index', $novel->id)}}">Torna ai fumetti</a>
 
     <a class="btn btn-primary" href="{{route('novels.edit', $novel->id)}}">Modifica</a>
+
+    <form action="{{route('novels.destroy', $novel->id)}}" method="POST" class="d-inline-block">
+        @csrf
+        @method('delete')
+        <button class="btn btn-danger" type="submit">Elimina</button>
+    </form>
 
 
 </div>

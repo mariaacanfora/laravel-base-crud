@@ -94,6 +94,6 @@ class NovelController extends Controller
     public function destroy(Novel $novel)
     {
         $novel->delete();
-        return redirect()->route('novels.index')->with('msg', 'Fumetto eliminato correttamente');
+        return redirect()->route('novels.index');
     }
 }
